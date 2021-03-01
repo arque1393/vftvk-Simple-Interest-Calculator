@@ -16,9 +16,14 @@ function si(){
     a = Number(document.getElementById('input1').value);
     b = Number(document.getElementById('input2').value);
     c = Number(document.getElementById('list').value);
-    d = (a*b*c)/100;
-    x = new Date();
-    x = 2000 + x.getYear()%100 + c;
-    p = document.getElementById('1');
-    p.innerHTML = 'If you deposit ' + a.toString() + '<br>at an interest rate of '+b.toString()+'% , <br>you will recive an amount ' + d.toString()+' ,<br> in the year ' + x.toString()  ;
+    if (a<0){
+        alert('Please Enter a Positive Number')
+    }
+    else {
+        d = (a*b*c)/100;
+        x = new Date();
+        x = 2000 + x.getYear()%100 + c;
+        p = document.getElementById('1');
+        p.innerHTML = 'If you deposit ' + a.toString() + '<br>at an interest rate of '+b.toString()+'% , <br>you will recive an amount ' + d.toString()+' ,<br> in the year ' + x.toString()  ;
+    }
 }
